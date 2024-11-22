@@ -1,0 +1,105 @@
+/* Applique box-sizing à tous les éléments pour une gestion plus précise des tailles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--orange-background);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Ajuste la disposition des pizzas avec Flexbox */
+.pizza-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Réduit l'écart entre les éléments */
+}
+
+/* Ajuste l'élément pizza-item pour éviter le débordement */
+.pizza-item {
+    display: flex;
+    flex-wrap: wrap; /* Permet à l'élément de se réorganiser sur plusieurs lignes si nécessaire */
+    justify-content: space-between; /* Sépare les éléments sur la ligne */
+    align-items: center;
+    padding: 10px;
+    background-color: var(--white);
+    border: 1px solid var(--orange-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%; /* Prend toute la largeur disponible */
+}
+
+/* Pour limiter la largeur de l'image */
+.pizza-item img {
+    width: 50px; /* Réduit la taille de l'image pour mobile */
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Ajuste la taille et la disposition du texte pour éviter le débordement */
+.pizza-details {
+    flex-grow: 1; /* Prend tout l'espace restant pour le texte */
+    max-width: calc(100% - 70px); /* Limite la largeur du texte */
+}
+
+.pizza-item h3 {
+    font-size: 1em; /* Réduit légèrement la taille de la police */
+    margin: 5px 0;
+    color: var(--orange-main);
+}
+
+.pizza-item p {
+    font-size: 0.85em; /* Réduit la taille de la police pour mieux s'adapter */
+    color: var(--text-light);
+    margin: 5px 0;
+    word-wrap: break-word; /* Permet au texte de se couper et de s'adapter à la largeur */
+    overflow-wrap: break-word;
+}
+
+/* Réduit la taille du champ de quantité pour éviter le débordement */
+.pizza-item select,
+.pizza-item input[type="number"] {
+    width: 40%; /* Réduit la largeur du champ de quantité */
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--orange-border);
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Ajuste le container principal */
+.container {
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Ajuste les formulaires pour mobile */
+input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--orange-border);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+/* Ajuste les boutons pour mobile */
+button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+/* Ajuste le panier total pour mobile */
+.cart-total {
+    font-weight: bold;
+    color: var(--orange-main);
+    font-size: 1em;
+}

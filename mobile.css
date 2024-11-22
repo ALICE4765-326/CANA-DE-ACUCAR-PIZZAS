@@ -1,0 +1,40 @@
+/* Ajustements pour mobile.css */
+
+/* Limite la largeur des champs de saisie */
+.pizza-item select, .pizza-item input[type="number"] {
+    width: 100%; /* Utilisation de toute la largeur disponible */
+    box-sizing: border-box; /* Assure que le padding ne dépasse pas la largeur */
+}
+
+/* Pour éviter que les descriptions dépassent du cadre */
+.pizza-item p {
+    word-wrap: break-word; /* Permet au texte de se couper et de s'adapter à la largeur */
+    overflow-wrap: break-word; /* Assure la coupure des mots longs */
+    font-size: 0.9em; /* Réduit légèrement la taille de la police des descriptions */
+}
+
+/* Ajuste les éléments pour les petits écrans */
+.pizza-item {
+    padding: 10px;
+    margin-bottom: 15px; /* Ajouter un espace entre les éléments du menu */
+    width: 100%; /* Ajuste la largeur pour que chaque pizza occupe toute la largeur de l'écran */
+}
+
+/* Améliore l'affichage des images et du texte dans les pizzas */
+.pizza-item img {
+    width: 60px; /* Redimensionne l'image pour les petits écrans */
+    height: 60px; /* Redimensionne l'image pour les petits écrans */
+}
+
+/* Ajustement du container général pour mobile */
+.container {
+    padding: 10px; /* Réduit le padding pour plus d'espace sur les petits écrans */
+}
+
+/* Amélioration de la disposition de la pizza et du texte pour éviter tout débordement */
+.pizza-item h3, .pizza-item p {
+    margin: 0;
+    padding: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Affiche les "..." pour le texte qui dépasse */
+}
